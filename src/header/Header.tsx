@@ -2,7 +2,7 @@ import { Avatar, Indicator } from '@mantine/core';
 import { IconBell, IconBrandSwift, IconSettings } from '@tabler/icons-react';
 import NavLinks from './NavLinks';
 const Header = () => {
-    return <div className="w-full bg-mine-shaft-950 text-white h-20 flex justify-between items-center px-10">
+    return <div className="w-full bg-mine-shaft-950 text-white h-20 flex justify-between items-center px-10 font-['poppins']">
         <div className='flex gap-1 items-center text-bright-sun-400'>
             <IconBrandSwift stroke={2.5} className='h-10 w-10' />
             <div className='text-3xl font-semibold'>SwiftJobs</div>
