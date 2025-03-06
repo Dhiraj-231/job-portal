@@ -11,7 +11,7 @@ const Subscribe = () => {
                     placeholder="Your@email.com"
                     size="xl"
                 />
-                <Button className="!rounded-lg" size="lg" variant="filled" color="bright-sun.4" radius="md">Subscribe</Button>;
+                <Button className="!rounded-lg" size="lg" variant="filled" color="bright-sun.4" radius="md">Subscribe</Button>
             </div>
 
         </div>
