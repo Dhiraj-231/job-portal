@@ -7,9 +7,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import FindJobs from './Pages/FindJobs';
 import Header from './header/Header';
 import Footer from './Footer/Footer';
+import FindTalentPage from './Pages/FindTalentPage';
+import TalentProfilePage from './Pages/TalentProfilePage';
 
 function App() {
   const theme = createTheme({
+    focusRing: 'never',
     colors: {
       'bright-sun': ['#fffbeb', '#fff3c6', '#ffe588', '#ffd149', '#ffbd20', '#f99b07', '#dd7302', '#b75006', '#943c0c', '#7a330d', '#461902',
       ],
@@ -18,6 +21,7 @@ function App() {
 
     },
     fontFamily: 'Poppins, sans-serif',
+    primaryColor: 'bright-sun',
   })
   return (
     <MantineProvider defaultColorScheme='dark' theme={theme}>
@@ -25,6 +29,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/find-jobs" element={<FindJobs />} />
+          <Route path="/find-talents" element={<FindTalentPage />} />
+          <Route path="/talent-profile" element={<TalentProfilePage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer />
