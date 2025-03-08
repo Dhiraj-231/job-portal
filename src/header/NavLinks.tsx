@@ -4,7 +4,7 @@ const NavLinks = () => {
     const links = [
         { name: "Find Jobs", url: '/find-jobs' },
         { name: "Find Talents", url: '/find-talents' },
-        { name: "Upload Job", url: '/upload-job' },
+        { name: "Post Jobs", url: '/post-jobs' },
         { name: "About Us", url: '/about' }
     ]
     return (
