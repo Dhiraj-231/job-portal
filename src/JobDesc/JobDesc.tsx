@@ -2,8 +2,10 @@ import { ActionIcon, Button, Divider } from "@mantine/core";
 import { IconBookmark } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { card, desc, skills } from "../Data/JobDescData";
+import DOMPurify from "dompurify";
 
 const JobDesc = () => {
+    const data = DOMPurify.sanitize(desc);
     return (
         <div className="w-2/3">
             <div className="flex justify-between">
@@ -50,7 +52,26 @@ const JobDesc = () => {
                 </div>
             </div>
             <Divider my="xl" />
-            <div dangerouslySetInnerHTML={{ __html: desc }}></div>
+            <div className="[&_h4]:text-xl [&_*]:text-mine-shaft-300 [&_li]:marker:text-bright-sun-400 [&_h4]:my-5 [&_li]:mb-1 [&_h4]:font-semibold [&_h4]:text-mine-shaft-200 [&_p]:text-justify" dangerouslySetInnerHTML={{ __html: data }}></div>
+            <Divider my="xl" />
+            <div>
+                <div className="text-xl font-semibold mb-5">About Company</div>
+                <div className="flex justify-between mb-3">
+                    <div className="flex gap-2 items-center">
+                        <div className="p-3 bg-mine-shaft-800 rounded-xl">
+                            <img className="h-8" src={`/icons/Google.png`} alt={`Google Logo`} />
+                        </div>
+                        <div className="flex flex-col">
+                            <div className="font-medium text-lg">Google</div>
+                            <div className="text-lg text-mine-shaft-300">10k+ Employees </div>
+                        </div>
+                    </div>
+                    <Link to="">
+                        <Button color="bright-sun.4" variant="light">Company Page</Button>
+                    </Link>
+                </div>
+                <div className="text-mine-shaft-300 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ullam quas non beatae in illum voluptatum quos asperiores animi culpa sint perspiciatis accusamus, magni quo voluptatem! Voluptatibus temporibus aut ex!</div>
+            </div>
         </div>
     )
 }
