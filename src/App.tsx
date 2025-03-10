@@ -4,6 +4,7 @@ import '@mantine/core/styles.css';
 import '@mantine/tiptap/styles.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import '@mantine/dates/styles.css';
 import Footer from './Footer/Footer';
 import ApplyJobPage from './Pages/ApplyJobPage';
 import CompanyPage from './Pages/CompanyPage';

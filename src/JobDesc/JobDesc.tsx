@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { card, desc, skills } from "../Data/JobDescData";
 import DOMPurify from "dompurify";
 
-const JobDesc = () => {
+const JobDesc = (props: any) => {
     const data = DOMPurify.sanitize(desc);
     return (
         <div className="w-2/3">
@@ -22,9 +22,9 @@ const JobDesc = () => {
                 </div>
                 <div className="flex flex-col gap-2 items-center">
                     <Link to="/apply-job">
-                        <Button color="bright-sun.4" size="sm" variant="light">Apply</Button>
+                        <Button color="bright-sun.4" size="sm" variant="light">{props.edit ? "Edit" : "Apply"}</Button>
                     </Link>
-                    <IconBookmark className="text-bright-sun-400 cursor-pointer" />
+                    {props.edit ? <Button color="red.5" size="sm" variant="outline">Delete</Button> : <IconBookmark className="text-bright-sun-400 cursor-pointer" />}
                 </div>
             </div>
             <Divider my="xl" />
