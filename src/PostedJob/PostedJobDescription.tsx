@@ -18,7 +18,7 @@ const PostedJobDescription = () => {
 
                     <Tabs.Panel value="overview" className="[&>div]:w-full"><JobDesc edit /></Tabs.Panel>
                     <Tabs.Panel value="applicants">
-                        <div className="mt-10 flex flex-wrap gap-10 ">
+                        <div className="mt-10 flex flex-wrap gap-10 justify-around ">
                             {
                                 talents.map((talent, index) => (
                                     index < 6 && <TalentsCard key={index} {...talent} posted />
@@ -26,7 +26,15 @@ const PostedJobDescription = () => {
                             }
                         </div>
                     </Tabs.Panel>
-                    <Tabs.Panel value="invited">l</Tabs.Panel>
+                    <Tabs.Panel value="invited">
+                        <div className="mt-10 flex flex-wrap gap-10 justify-around  ">
+                            {
+                                talents.map((talent, index) => (
+                                    index < 6 && <TalentsCard key={index} {...talent} invited />
+                                ))
+                            }
+                        </div>
+                    </Tabs.Panel>
                 </Tabs>
             </div>
         </div>

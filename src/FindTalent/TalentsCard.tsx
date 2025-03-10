@@ -35,22 +35,41 @@ const TalentsCard = (props: any) => {
             </div>
             <Text className="!text-xs text-justify !text-mine-shaft-300" lineClamp={3}>{props.about}</Text>
             <Divider size="xs" color="mine-shaft.7" />
-            <div className="flex justify-between">
-                <div className="font-semibold text-mine-shaft-200">
-                    {props.expectedCtc}
+            {
+                props.invited ? <div className="flex gap-2 text-mine-shaft-200 text-sm items-center">
+                    <IconCalendarMonth stroke={1.5} /> Interview: August 27,2024 10:00 AM
+                </div> : <div className="flex justify-between">
+                    <div className="font-semibold text-mine-shaft-200">
+                        {props.expectedCtc}
+                    </div>
+                    <div className="flex gap-1 text-mine-shaft-400 text-xs items-center">
+                        <IconMapPin className="h-5 w-5" stroke={1.5} /> {props.location}
+                    </div>
                 </div>
-                <div className="flex gap-1 text-mine-shaft-400 text-xs items-center">
-                    <IconMapPin className="h-5 w-5" stroke={1.5} /> {props.location}
-                </div>
-            </div>
+            }
+
             <Divider size="xs" color="mine-shaft.7" />
             <div className="flex [&>*]:w-1/2  [&>*]:p-1">
-                <Link to="/talent-profile">
-                    <Button fullWidth color="bright-sun.4" variant="outline">Profile</Button>
-                </Link>
-                <div>
-                    {props.posted ? <Button onClick={open} rightSection={<IconCalendarMonth className="w-5 h-5" />} fullWidth color="bright-sun.4" variant="light">Schedule</Button> : <Button fullWidth color="bright-sun.4" variant="light">Message</Button>}
-                </div>
+                {
+                    !props.invited && <>
+                        <Link to="/talent-profile">
+                            <Button fullWidth color="bright-sun.4" variant="outline">Profile</Button>
+                        </Link>
+                        <div>
+                            {props.posted ? <Button onClick={open} rightSection={<IconCalendarMonth className="w-5 h-5" />} fullWidth color="bright-sun.4" variant="light">Schedule</Button> : <Button fullWidth color="bright-sun.4" variant="light">Message</Button>}
+                        </div>
+                    </>
+                }
+                {
+                    props.invited && <>
+                        <div>
+                            <Button fullWidth color="bright-sun.4" variant="outline">Accept</Button>
+                        </div>
+                        <div>
+                            <Button fullWidth color="bright-sun.4" variant="light">Reject</Button>
+                        </div>
+                    </>
+                }
             </div>
             <Modal opened={opened} onClose={close} title="Schedule Interview" centered>
                 <div className="flex flex-col gap-4">
