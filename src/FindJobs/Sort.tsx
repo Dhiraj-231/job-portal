@@ -1,4 +1,4 @@
-import { Combobox, useCombobox } from '@mantine/core';
+import { ActionIcon, Combobox, useCombobox } from '@mantine/core';
 import { IconAdjustments } from '@tabler/icons-react';
 import { useState } from 'react';
 
@@ -30,7 +30,7 @@ const Sort = () => {
                 <Combobox.Target>
 
                     <div onClick={() => combobox.toggleDropdown()} className='border border-bright-sun-400 text-sm flex px-2 py-1 rounded-xl items-center cursor-pointer gap-1'>
-                        {selectedItem} <IconAdjustments className="h-5 w-5 text-bright-sun-400" stroke={2} />
+                        {selectedItem}<ActionIcon color='bright-sun.4' variant='transparent' aria-label='Settings'> <IconAdjustments className="h-5 w-5 text-bright-sun-400" stroke={2} /> </ActionIcon>
                     </div>
                 </Combobox.Target>
 

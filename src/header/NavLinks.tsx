@@ -5,7 +5,7 @@ const NavLinks = () => {
         { name: "Find Jobs", url: '/find-jobs' },
         { name: "Find Talents", url: '/find-talents' },
         { name: "Post Jobs", url: '/post-jobs' },
-        { name: "About Us", url: '/about' }
+        { name: "Posted Job", url: '/posted-job' }
     ]
     return (
         <div className='flex gap-5 text-mine-shaft-300 h-full items-center'>
