@@ -1,10 +1,11 @@
 import { Avatar, Indicator } from '@mantine/core';
 import { IconBell, IconBrandSwift, IconSettings } from '@tabler/icons-react';
 import NavLinks from './NavLinks';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Header = () => {
     const navigate = useNavigate();
-    return <div className="w-full bg-mine-shaft-950 text-white h-20 flex justify-between items-center px-10 font-['poppins']">
+    const location = useLocation();
+    return location.pathname !== '/sign-up' && location.pathname !== '/login' ? <div className="w-full bg-mine-shaft-950 text-white h-20 flex justify-between items-center px-10 font-['poppins']">
         <div className='flex gap-1 items-center text-bright-sun-400 cursor-pointer' onClick={() => navigate('/')} >
             <IconBrandSwift stroke={2.5} className='h-10 w-10' />
             <div className='text-3xl font-semibold'>SwiftJobs</div>
@@ -28,7 +29,7 @@ const Header = () => {
 
 
         </div>
-    </div>
+    </div> : <></>
 }
 
 export default Header;
